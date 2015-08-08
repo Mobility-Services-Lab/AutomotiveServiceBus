@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service path="auto" name="Auto" ranking="15">
+	<parameters>
+		<restSwitchParameter referenceParameter="16"
+			readOnly="false" path="absdeaktivieren" name="ABS deaktivieren" />
+		<restSwitchParameter referenceParameter="17"
+			readOnly="false" path="espdeaktivieren" name="ESP deaktivieren" />
+		<restSwitchParameter referenceParameter="18"
+			path="tvdeaktivieren" name="TV deaktivieren" readOnly="false" />
+		<restStateParameter referenceParameter="19"
+			readOnly="false" path="fahrmodus" name="Fahrmodus" />
+		<restSwitchParameter referenceParameter="36"
+			readOnly="true" path="abs" name="ABS" />
+		<restSwitchParameter referenceParameter="37"
+			readOnly="true" path="esp" name="ESP" />
+		<restNumericParameter referenceParameter="2"
+			intervals="63" stepSize="0.5" readOnly="true" path="energieverbrauch"
+			name="Energieverbrauch" />
+		<restNumericParameter referenceParameter="11"
+			readOnly="true" path="geschwindigkeit" name="Geschwindigkeit"
+			forClusterDisplay="true" />
+
+		<restNumericParameter referenceParameter="12"
+			readOnly="true" path="beschleunigung" name="Beschleunigung" />
+
+		<restStateParameter referenceParameter="13"
+			readOnly="true" path="blinker" name="Blinker" />
+
+		<restNumericParameter referenceParameter="14"
+			readOnly="true" path="ladezustand" name="Ladezustand" />
+
+		<restStateParameter referenceParameter="15"
+			readOnly="true" path="licht" name="Licht" />
+
+		<restStateParameter referenceParameter="20"
+			readOnly="true" path="gang" name="Gang" />
+
+		<restStateParameter referenceParameter="21"
+			readOnly="true" path="airbag" name="Airbag" />
+
+		<restSwitchParameter referenceParameter="22"
+			readOnly="true" path="fahrertuer" name="Fahrertür" />
+
+		<restSwitchParameter referenceParameter="23"
+			readOnly="true" path="beifahrertuer" name="Beifahrertür" />
+
+		<restSwitchParameter referenceParameter="24"
+			readOnly="true" path="sitzgurt" name="Sitzgurt" />
+
+		<restNumericParameter referenceParameter="25"
+			readOnly="true" path="gesamtkilometerstand" name="Gesamtkilometerstand" />
+
+		<restNumericParameter referenceParameter="26"
+			readOnly="true" path="tageskilometerstand" name="Tageskilometerstand" />
+		<restSwitchParameter referenceParameter="27"
+			path="heckklappe" name="Heckklappe" readOnly="true" />
+		<restSwitchParameter referenceParameter="28"
+			path="fronthaube" name="Fronthaube" readOnly="true" />
+		<restSwitchParameter referenceParameter="32"
+			readOnly="true" path="shutdown" name="Shutdown" />
+		<restSwitchParameter referenceParameter="33"
+			path="nebelschlussleuchte" name="Nebelschlussleuchte" readOnly="true" />
+		<restStateParameter referenceParameter="34"
+			readOnly="true" path="fahrbereit" name="Fahrbereitschaft" />
+		<restSwitchParameter referenceParameter="35"
+			path="parkbremse" name="Parkbremse" readOnly="true" />
+		<restSwitchParameter referenceParameter="38"
+			path="ladekabel" name="Ladekabel angeschlossen" readOnly="true" />
+        <restSwitchParameter referenceParameter="39"
+            path="speedlimiter" name="Tempomat aktiv" readOnly="true" />
+        <restNumericParameter referenceParameter="40"
+            readOnly="true" path="geschwindigkeitSpeedlimiter" name="Regelgeschwindigkeit" />
+	</parameters>
+</service>

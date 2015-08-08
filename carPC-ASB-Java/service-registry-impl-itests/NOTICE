@@ -1,0 +1,128 @@
+Automotive Service Bus v1.1
+Copyright 2015 Technische Universität München
+
+This product includes software that was forked from the research project Visio.M:
+
+	http://www.visiom-automobile.de/home/
+
+Authors:
+David Soto Setzke
+
+
+Licenses for third party references:
+  A Swiss Army Knife for OSGi under Apache Software License 2.0
+  Aether :: API under Eclipse Public License, Version 1.0
+  Aether :: Connector :: Wagon under Eclipse Public License, Version 1.0
+  Aether :: Implementation under Eclipse Public License, Version 1.0
+  Aether :: SPI under Eclipse Public License, Version 1.0
+  Aether :: Utilities under Eclipse Public License, Version 1.0
+  Apache Aries Blueprint API under The Apache Software License, Version 2.0
+  Apache Aries Blueprint CM under The Apache Software License, Version 2.0
+  Apache Aries Blueprint Core under The Apache Software License, Version 2.0
+  Apache Aries Blueprint Core Compatiblity Fragment Bundle under The Apache Software License, Version 2.0
+  Apache Aries Proxy API under The Apache Software License, Version 2.0
+  Apache Aries Proxy Service under The Apache Software License, Version 2.0
+  Apache Aries Quiesce API under The Apache Software License, Version 2.0
+  Apache Aries Util under The Apache Software License, Version 2.0
+  Apache Felix Configuration Admin Service under The Apache Software License, Version 2.0
+  Apache Felix File Install under The Apache Software License, Version 2.0
+  Apache Felix Framework under The Apache Software License, Version 2.0
+  Apache Felix Utils under The Apache Software License, Version 2.0
+  Apache Karaf :: Assemblies :: Default Distribution under The Apache Software License, Version 2.0
+  Apache Karaf :: Assemblies :: Features :: Enterprise under The Apache Software License, Version 2.0
+  Apache Karaf :: Assemblies :: Features :: Framework under The Apache Software License, Version 2.0
+  Apache Karaf :: Assemblies :: Features :: Spring under The Apache Software License, Version 2.0
+  Apache Karaf :: Assemblies :: Features :: Standard under The Apache Software License, Version 2.0
+  Apache Karaf :: Bundle :: Commands under The Apache Software License, Version 2.0
+  Apache Karaf :: Bundle :: Core under The Apache Software License, Version 2.0
+  Apache Karaf :: Client under The Apache Software License, Version 2.0
+  Apache Karaf :: Exception under The Apache Software License, Version 2.0
+  Apache Karaf :: Features :: Command under The Apache Software License, Version 2.0
+  Apache Karaf :: Features :: Core under The Apache Software License, Version 2.0
+  Apache Karaf :: JAAS :: Boot under The Apache Software License, Version 2.0
+  Apache Karaf :: JAAS :: Config under The Apache Software License, Version 2.0
+  Apache Karaf :: JAAS :: Modules under The Apache Software License, Version 2.0
+  Apache Karaf :: Main under The Apache Software License, Version 2.0
+  Apache Karaf :: Region :: Core under The Apache Software License, Version 2.0
+  Apache Karaf :: Shell :: Console under The Apache Software License, Version 2.0
+  Apache Karaf :: Shell :: Help System under The Apache Software License, Version 2.0
+  Apache Karaf :: Shell :: Table under The Apache Software License, Version 2.0
+  Apache Karaf :: Shell :: Various Commands under The Apache Software License, Version 2.0
+  Apache Karaf :: System :: Core under The Apache Software License, Version 2.0
+  Apache Karaf :: System :: Shell Commands under The Apache Software License, Version 2.0
+  Apache Karaf :: Util under The Apache Software License, Version 2.0
+  Apache MINA Core under Apache 2.0 License
+  Apache Mina SSHD :: Core under Apache 2.0 License
+  Apache ServiceMix :: Bundles :: junit under The Apache Software License, Version 2.0
+  Apache XBean :: Reflect under The Apache Software License, Version 2.0
+  ASM All under BSD
+  CarPC :: Automotive Service Bus :: Features under Apache License, Version 2.0
+  CarPC :: Automotive Service Bus :: Service Model under Apache License, Version 2.0
+  CarPC :: Automotive Service Bus :: Service Registry API under Apache License, Version 2.0
+  CarPC :: Automotive Service Bus :: Service Registry Implementation (Integration Tests) under Apache License, Version 2.0
+  Codec under Apache License, Version 2.0
+  Commons Compress under The Apache Software License, Version 2.0
+  Commons IO under The Apache Software License, Version 2.0
+  Google Collections Library under The Apache Software License, Version 2.0
+  Google Guice - Core Library under The Apache Software License, Version 2.0
+  Guava: Google Core Libraries for Java under The Apache Software License, Version 2.0
+  HttpClient under Apache License
+  jansi under The Apache Software License, Version 2.0
+  JLEdit :: Core under The Apache Software License, Version 2.0
+  JLine under The BSD License
+  jsoup under The MIT License
+  JUnit under Common Public License Version 1.0
+  Logging under The Apache Software License, Version 2.0
+  Maven Aether Provider under The Apache Software License, Version 2.0
+  Maven Model under The Apache Software License, Version 2.0
+  Maven Model Builder under The Apache Software License, Version 2.0
+  Maven Repository Metadata Model under The Apache Software License, Version 2.0
+  Maven Wagon API under The Apache Software License, Version 2.0
+  Maven Wagon File Provider under The Apache Software License, Version 2.0
+  Maven Wagon HTTP Shared Library under The Apache Software License, Version 2.0
+  Maven Wagon Lightweight HTTP Provider under The Apache Software License, Version 2.0
+  Mockito under The MIT License
+  OPS4J Base - Execution under ALv2
+  OPS4J Base - IO under ALv2
+  OPS4J Base - Lang under ALv2
+  OPS4J Base - Monitors under ALv2
+  OPS4J Base - Net under ALv2
+  OPS4J Base - Service Provider Access under ALv2
+  OPS4J Base - Store under ALv2
+  OPS4J Base - Util - Collections under ALv2
+  OPS4J Base - Util - Property under ALv2
+  OPS4J Base - Util - XML under ALv2
+  OPS4J Pax Exam API under Apache License, Version 2.0
+  OPS4J Pax Exam Driver JUnit4 under Apache License, Version 2.0
+  OPS4J Pax Exam Karaf Container under Apache License, Version 2.0
+  OPS4J Pax Exam Remote Bundle Context under Apache License, Version 2.0
+  OPS4J Pax Exam Remote Bundle Context Client under Apache License, Version 2.0
+  OPS4J Pax Exam TestContainer Remote under Apache License, Version 2.0
+  OPS4J Pax Exam UI Low Level SPI under Apache License, Version 2.0
+  OPS4J Pax Logging - API under ALv2
+  OPS4J Pax Logging - Service under ALv2
+  OPS4J Pax Swissbox :: Bnd Utils under ALv2
+  OPS4J Pax Swissbox :: Framework Helpers under ALv2
+  OPS4J Pax Swissbox :: Lifecycle under ALv2
+  OPS4J Pax Swissbox :: OSGi Core under ALv2
+  OPS4J Pax Swissbox :: Property under ALv2
+  OPS4J Pax Swissbox :: Tracker under ALv2
+  OPS4J Pax Tinybundles under ALv2
+  OPS4J Pax Url - aether: under ALv2
+  OPS4J Pax Url - Commons under ALv2
+  OPS4J Pax Url - Maven Commons under ALv2
+  OPS4J Pax Url - wrap: under ALv2
+  org.eclipse:org.eclipse.osgi under Eclipse Public License, Version 1.0
+  org.osgi.enterprise under Eclipse Public License, Version 1.0
+  osgi.cmpn under Apache License, Version 2.0
+  osgi.core under Apache License, Version 2.0
+  Plexus :: Component Annotations under The Apache Software License, Version 2.0
+  Plexus :: Default Container under The Apache Software License, Version 2.0
+  Plexus Classworlds under The Apache Software License, Version 2.0
+  Plexus Common Utilities under Apache Public License 2.0
+  Plexus Interpolation API under The Apache Software License, Version 2.0
+  Sisu-Inject-Bean : Aggregate OSGi bundle under The Apache Software License, Version 2.0 or Eclipse Public License, Version 1.0
+  Sisu-Inject-Plexus : Aggregate OSGi bundle under Eclipse Public License, Version 1.0
+  SLF4J API Module under MIT License
+  XZ for Java under Public Domain
+

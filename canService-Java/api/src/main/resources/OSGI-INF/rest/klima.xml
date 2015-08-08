@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service path="klima" name="Klima" ranking="2">
+	<parameters>
+		<restSwitchParameter referenceParameter="0"
+			readOnly="true" path="defrost" name="Defrost" />
+		<restSwitchParameter referenceParameter="1" path="umluft"
+			name="Umluft" readOnly="false" />
+		<restNumericParameter referenceParameter="3"
+			intervals="63" stepSize="0.5" readOnly="true" path="innentemperatur"
+			name="Innentemperatur" />
+		<restNumericParameter referenceParameter="4"
+			intervals="63" stepSize="0.5" readOnly="true" path="aussentemperatur"
+			name="Aussentemperatur" />
+		<restNumericParameter referenceParameter="5"
+			intervals="5" stepSize="0.5" readOnly="false" path="luefterInnenraum"
+			name="Lüfter" />
+		<restNumericParameter referenceParameter="6"
+			intervals="5" stepSize="0.5" readOnly="false" path="klappenstellung"
+			name="Klappenstellung" />
+		<restNumericParameter referenceParameter="7"
+			intervals="63" stepSize="0.5" readOnly="false" path="temperaturvorgabe"
+			name="Temperaturvorgabe" />
+		<restStateParameter referenceParameter="8"
+			readOnly="false" path="klimatisierung" name="Klimatisierung" />
+		<restNumericParameter referenceParameter="9"
+			intervals="4" stepSize="1.0" readOnly="false" path="sitzklimafahrer"
+			name="Sitzklimatisierung Fahrer" />
+		<restNumericParameter referenceParameter="10"
+			intervals="4" stepSize="1.0" readOnly="false" path="sitzklimabeifahrer"
+			name="Sitzklimatisierung Beifahrer" />
+	</parameters>
+</service>

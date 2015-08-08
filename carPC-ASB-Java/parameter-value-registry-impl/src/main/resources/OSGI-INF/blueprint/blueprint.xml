@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint default-activation="eager"
+	xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+
+	<bean id="parameterValueRegistryImpl"
+		class="de.visiom.carpc.asb.parametervalueregistry.impl.ParameterValueRegistryImpl" />
+
+	<service id="parameterValueRegistry"
+		interface="de.visiom.carpc.asb.parametervalueregistry.ParameterValueRegistry"
+		ref="parameterValueRegistryImpl" />
+
+	<service id="parameterValueRegistryListener" interface="org.osgi.service.event.EventHandler"
+		ref="parameterValueRegistryImpl">
+		<service-properties>
+			<entry key="event.topics" value="visiom/updates/*" />
+		</service-properties>
+	</service>
+
+</blueprint>

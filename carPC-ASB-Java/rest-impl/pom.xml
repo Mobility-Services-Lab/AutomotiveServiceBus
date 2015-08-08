@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<!-- Licensed to the Apache Software Foundation (ASF) under one or more 
+		contributor license agreements. See the NOTICE file distributed with this 
+		work for additional information regarding copyright ownership. The ASF licenses 
+		this file to You under the Apache License, Version 2.0 (the "License"); you 
+		may not use this file except in compliance with the License. You may obtain 
+		a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 Unless 
+		required by applicable law or agreed to in writing, software distributed 
+		under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES 
+		OR CONDITIONS OF ANY KIND, either express or implied. See the License for 
+		the specific language governing permissions and limitations under the License. -->
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>rest-impl</artifactId>
+	<packaging>bundle</packaging>
+
+	<name>CarPC :: Automotive Service Bus :: REST Implementation</name>
+
+	<description>The default implementation of the REST API.</description>
+
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+
+	<parent>
+		<groupId>de.visiom.carpc.asb</groupId>
+		<artifactId>asb-parent</artifactId>
+		<version>1.1.0</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>de.visiom.carpc.asb</groupId>
+			<artifactId>rest-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>de.visiom.carpc.asb</groupId>
+			<artifactId>service-registry-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>de.visiom.carpc.asb</groupId>
+			<artifactId>message-bus-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>de.visiom.carpc.asb</groupId>
+			<artifactId>parameter-value-registry-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>de.visiom.carpc.asb</groupId>
+			<artifactId>user-store-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.eclipsesource.jaxrs</groupId>
+			<artifactId>provider-security</artifactId>
+			<version>${jaxrs-provider-security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.3</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-Activator>de.visiom.carpc.asb.rest.impl.Activator</Bundle-Activator>
+						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+						<Bundle-Version>${project.version}</Bundle-Version>
+						<Export-Package />
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

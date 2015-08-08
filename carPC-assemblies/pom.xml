@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>de.visiom.carpc</groupId>
+		<artifactId>carpc-parent</artifactId>
+		<version>1.1.0</version>
+	</parent>
+
+	<groupId>de.visiom.carpc.assemblies</groupId>
+	<artifactId>assembly-parent</artifactId>
+	<packaging>pom</packaging>
+	<name>CarPC :: Assemblies :: Parent Module</name>
+
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+
+	<!-- <repositories> <repository> <id>smx.m2</id> <url>http://svn.apache.org/repos/asf/servicemix/m2-repo/</url> 
+		</repository> </repositories> -->
+	<properties>
+		<karaf.version>3.0.0</karaf.version>
+		<can.version>1.1.0</can.version>
+		<asb.version>1.1.0</asb.version>
+		<rest.port>8080</rest.port>
+	</properties>
+
+	<modules>
+		<module>karaf-assembly</module>
+		<module>core-assembly</module>
+		<module>core-can-test-assembly</module>
+		<module>core-can-prod-assembly</module>
+	</modules>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.karaf.features</groupId>
+			<artifactId>framework</artifactId>
+			<version>${karaf.version}</version>
+			<type>kar</type>
+		</dependency>
+		<dependency>
+			<groupId>de.visiom.carpc.asb</groupId>
+			<artifactId>features</artifactId>
+			<classifier>features</classifier>
+			<version>${asb.version}</version>
+			<type>xml</type>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>de.visiom.carpc.services.can</groupId>
+			<artifactId>features</artifactId>
+			<classifier>features</classifier>
+			<version>${can.version}</version>
+			<type>xml</type>
+			<scope>runtime</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.jasig.maven</groupId>
+				<artifactId>maven-notice-plugin</artifactId>
+				<version>1.0.4</version>
+				<configuration>
+					<noticeTemplate>NOTICE.template</noticeTemplate>
+					<licenseMapping>
+						<param>https://source.jasig.org/licenses/license-mappings.xml</param>
+						<param>license-mappings.xml</param>
+					</licenseMapping>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.4.2</version>
+				<configuration>
+					<goals>deploy</goals>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-resources</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.basedir}/target/assembly</outputDirectory>
+							<overwrite>true</overwrite>
+							<resources>
+								<resource>
+									<directory>../resources</directory>
+									<filtering>true</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.karaf.tooling</groupId>
+					<artifactId>karaf-maven-plugin</artifactId>
+					<extensions>true</extensions>
+					<version>${karaf.version}</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint default-activation="eager"
+	xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0" xmlns:jpa="http://aries.apache.org/xmlns/jpa/v1.0.0">
+
+	<reference id="serviceRegistry"
+		interface="de.visiom.carpc.asb.serviceregistry.ServiceRegistry" />
+
+	<reference id="eventPublisher" interface="de.visiom.carpc.asb.messagebus.EventPublisher" />
+
+	<bean id="userServiceImpl" class="de.visiom.carpc.asb.userstore.impl.UserServiceImpl"
+		init-method="init" >
+		<jpa:unit unitname="preferences" property="entityManagerFactory" />
+		<property name="eventPublisher" ref="eventPublisher" />
+	</bean>
+
+	<bean id="preferencesServiceImpl"
+		class="de.visiom.carpc.asb.userstore.impl.PreferencesServiceImpl">
+		<jpa:unit unitname="preferences" property="entityManagerFactory" />
+		<property name="serviceRegistry" ref="serviceRegistry" />
+		<property name="eventPublisher" ref="eventPublisher" />
+	</bean>
+
+	<service id="preferencesService" ref="preferencesServiceImpl"
+		interface="de.visiom.carpc.asb.userstore.PreferencesService" />
+
+	<service id="userService" ref="userServiceImpl"
+		interface="de.visiom.carpc.asb.userstore.UserService" />
+
+</blueprint>

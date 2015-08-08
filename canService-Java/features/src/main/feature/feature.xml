@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features name="can-features" version="${project.version}">
+    <repository>mvn:de.visiom.carpc.services.can/features/${project.version}/xml/features</repository>
+    
+    <feature name="can-test" version="${project.version}">
+        <feature>asb</feature>
+        <bundle>mvn:de.visiom.carpc.services.can/datasource/${project.version}</bundle>
+        <bundle>mvn:de.visiom.carpc.services.can/api/${project.version}</bundle>
+        <bundle>mvn:de.visiom.carpc.services.can/messageloader-impl/${project.version}</bundle>
+        <bundle>mvn:de.visiom.carpc.services.can/core/${project.version}</bundle>    
+        <bundle>mvn:de.visiom.carpc.services.can/canbus-test/${project.version}</bundle>
+    </feature>
+
+    <feature name="can-prod" version="${project.version}">
+        <feature>asb</feature>
+        <bundle>mvn:de.visiom.carpc.services.can/datasource/${project.version}</bundle>
+        <bundle>mvn:de.visiom.carpc.services.can/api/${project.version}</bundle>
+        <bundle>mvn:de.visiom.carpc.services.can/messageloader-impl/${project.version}</bundle>
+        <bundle>mvn:de.visiom.carpc.services.can/core/${project.version}</bundle>
+        <bundle>mvn:peak.can.basic/pcan-api/${pcan.version}</bundle>
+        <bundle>mvn:de.visiom.carpc.services.can/canbus-impl/${project.version}</bundle>
+    </feature>
+</features>

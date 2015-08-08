@@ -1,0 +1,22 @@
+Automotive Service Bus v1.1
+Copyright 2015 Technische Universität München
+
+This product includes software that was forked from the research project Visio.M:
+
+	http://www.visiom-automobile.de/home/
+
+Authors:
+David Soto Setzke
+
+
+Licenses for third party references:
+  CarPC :: Automotive Service Bus :: Service Model under Apache License, Version 2.0
+  CarPC :: Automotive Service Bus :: User Store API under Apache License, Version 2.0
+  Guava: Google Core Libraries for Java under The Apache Software License, Version 2.0
+  JUnit under Common Public License Version 1.0
+  Mockito under The MIT License
+  org.osgi.enterprise under Eclipse Public License, Version 1.0
+  osgi.cmpn under Apache License, Version 2.0
+  osgi.core under Apache License, Version 2.0
+  SLF4J API Module under MIT License
+

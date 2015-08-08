@@ -1,0 +1,14 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<features name="${serviceName}-features" version="${symbol_dollar}{project.version}">
+    <repository>mvn:${groupId}/${artifactId}/${symbol_dollar}{project.version}/xml/${artifactId}</repository>
+    
+    <feature name="${serviceName}" version="${symbol_dollar}{project.version}">
+        <feature>asb</feature>
+        <bundle>mvn:${groupId}/service/${symbol_dollar}{project.version}</bundle>
+        <bundle>mvn:${groupId}/impl/${symbol_dollar}{project.version}</bundle>
+    </feature>
+
+</${artifactId}>

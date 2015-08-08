@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<license-lookup xmlns="https://source.jasig.org/schemas/maven-notice-plugin/license-lookup" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://source.jasig.org/schemas/maven-notice-plugin/license-lookup https://source.jasig.org/schemas/maven-notice-plugin/license-lookup/license-lookup-v1.0.xsd">
+    <artifact>
+        <groupId>org.eclipse</groupId>
+        <artifactId>org.eclipse.osgi</artifactId>
+	<license>Eclipse Public License, Version 1.0</license>
+    </artifact>
+    <artifact>
+        <groupId>org.osgi</groupId>
+        <artifactId>org.osgi.enterprise</artifactId>
+        <license>Apache License, Version 2.0</license>
+    </artifact>
+    <artifact>
+        <groupId>peak.can.basic</groupId>
+        <artifactId>pcan-api</artifactId>
+        <license>LGPL, v2.1</license>
+    </artifact>
+</license-lookup>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features name="can-feature" version="${project.version}">
+    <repository>mvn:de.visiom.carpc.services/can-service/${project.version}/xml/features</repository>
+    
+    <feature name="can-service" version="${project.version}">
+        <feature>asb</feature>
+        <bundle>mvn:de.visiom.carpc.services/can-service/${project.version}</bundle>
+    </feature>
+</features>

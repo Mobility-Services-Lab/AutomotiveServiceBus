@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint default-activation="eager"
+	xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<reference id="eventAdmin" interface="org.osgi.service.event.EventAdmin" />
+
+	<reference id="eventPublisher" interface="de.visiom.carpc.asb.messagebus.EventPublisher" />
+
+	<reference id="commandPublisher"
+		interface="de.visiom.carpc.asb.messagebus.CommandPublisher" />
+
+	<reference id="serviceRegistry"
+		interface="de.visiom.carpc.asb.serviceregistry.ServiceRegistry" />
+
+	<reference id="canBusWriter" interface="de.visiom.carpc.can.canbus.io.CANBusWriter" />
+
+	<reference id="canBusReader" interface="de.visiom.carpc.can.canbus.io.CANBusReader" />
+
+	<reference id="messageLoader" interface="de.visiom.carpc.can.MessageLoader" />
+
+	<bean id="valueStore" class="de.visiom.carpc.can.impl.valuestore.ValueStore"
+		init-method="init">
+		<property name="serviceRegistry" ref="serviceRegistry" />
+		<property name="eventPublisher" ref="eventPublisher" />
+		<property name="canBusWriter" ref="canBusWriter" />
+		<property name="canBusReader" ref="canBusReader" />
+		<property name="messageLoader" ref="messageLoader" />
+	</bean>
+
+	<bean id="shutdownHandler" class="de.visiom.carpc.can.impl.ShutdownHandler" />
+
+	<bean id="commandListener"
+		class="de.visiom.carpc.can.impl.messagebus.MessageBusValueChangeRequestHandler">
+		<property name="messageForwarder" ref="valueStore" />
+		<property name="commandPublisher" ref="commandPublisher" />
+	</bean>
+
+	<service id="commandHandler" interface="org.osgi.service.event.EventHandler"
+		ref="commandListener">
+		<service-properties>
+			<entry key="event.topics" value="visiom/commands/requests" />
+			<entry key="event.filter" value="(|(serviceName=can)(serviceName=klima))" />
+		</service-properties>
+	</service>
+
+	<service id="shutdownListener" interface="org.osgi.service.event.EventHandler"
+		ref="shutdownHandler">
+		<service-properties>
+			<entry key="event.topics" value="visiom/updates/can" />
+			<entry key="event.filter" value="(parameterName=shutdown)" />
+		</service-properties>
+	</service>
+
+</blueprint>

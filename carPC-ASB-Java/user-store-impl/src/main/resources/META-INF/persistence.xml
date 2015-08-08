@@ -1,0 +1,23 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
+
+	<persistence-unit name="preferences" transaction-type="RESOURCE_LOCAL">
+		<non-jta-data-source>osgi:service/javax.sql.DataSource/(osgi.jndi.service.name=jdbc/userDS)
+		</non-jta-data-source>
+		<class>de.visiom.carpc.asb.userstore.impl.entities.PreferenceImpl</class>
+		<class>de.visiom.carpc.asb.userstore.impl.entities.UserImpl</class>
+		<class>de.visiom.carpc.asb.userstore.impl.entities.UserPreferenceImpl</class>
+		<class>de.visiom.carpc.asb.userstore.impl.entities.PreferenceImplId</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+		<properties>
+			<property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)" />
+			<property name="openjpa.jdbc.DBDictionary"
+				value="org.apache.openjpa.jdbc.sql.H2Dictionary(useGetObjectForBlobs=false)" />
+			<property name="openjpa.Log" value="DefaultLevel=ERROR" />
+			<property name="openjpa.ConnectionFactoryProperties"
+				value="PrettyPrint=true, PrettyPrintLineLength=72, PrintParameters=true, MaxActive=10, MaxIdle=5, MinIdle=2, MaxWait=60000" />
+		</properties>
+	</persistence-unit>
+
+</persistence>

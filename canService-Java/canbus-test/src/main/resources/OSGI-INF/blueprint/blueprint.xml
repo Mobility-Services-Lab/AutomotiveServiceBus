@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint default-activation="eager"
+	xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<reference id="messageLoader"
+		interface="de.visiom.carpc.can.MessageLoader" />
+
+	<service ref="canBusWriter" interface="de.visiom.carpc.can.canbus.io.CANBusWriter" />
+
+	<service ref="canBusReader" interface="de.visiom.carpc.can.canbus.io.CANBusReader" />
+
+	<bean id="canBusSimulator" class="de.visiom.carpc.can.impl.canbus.CANBusSimulator"
+		init-method="init">
+		<property name="messageLoader" ref="messageLoader" />
+	</bean>
+
+	<bean id="canBusReader" class="de.visiom.carpc.can.impl.canbus.io.TestCANBusReader"
+		init-method="start">
+		<property name="messageLoader" ref="messageLoader" />
+		<property name="canBusSimulator" ref="canBusSimulator" />
+	</bean>
+
+	<bean id="canBusWriter" class="de.visiom.carpc.can.impl.canbus.io.TestCANBusWriter">
+		<property name="canBusSimulator" ref="canBusSimulator" />
+	</bean>
+
+</blueprint>

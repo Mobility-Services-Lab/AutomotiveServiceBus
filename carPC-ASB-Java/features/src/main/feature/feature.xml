@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features name="carpc-asb" version="${project.version}">
+	<repository>mvn:de.visiom.carpc.asb/features/${project.version}/xml/features</repository>
+	<feature name="osgi-jaxrs" version="${project.version}">
+		<feature>http</feature>
+		<bundle>mvn:javax.validation/validation-api/${validation-api.version}</bundle>
+		<bundle>mvn:javax.servlet/javax.servlet-api/${javax.servlet-api.version}</bundle>
+		<bundle>mvn:javax.ws.rs/javax.ws.rs-api/${javax-ws-rs-api.version}</bundle>
+		<bundle>mvn:javax.annotation/javax.annotation-api/${javax.annotation-api.version}</bundle>
+		<bundle>mvn:org.javassist/javassist/${javassist.version}</bundle>
+		<bundle>mvn:org.glassfish.hk2.external/aopalliance-repackaged/${hk2.version}</bundle>
+		<bundle>mvn:org.glassfish.hk2/hk2-utils/${hk2.version}</bundle>
+		<bundle>mvn:org.glassfish.hk2.external/asm-all-repackaged/${asm.version}</bundle>
+		<bundle>mvn:org.glassfish.hk2.external/cglib/${cglib.version}</bundle>
+		<bundle>mvn:org.glassfish.hk2/osgi-resource-locator/${osgi-resource-locator.version}</bundle>
+		<bundle>mvn:org.glassfish.hk2.external/javax.inject/${hk2.version}</bundle>
+		<bundle>mvn:org.glassfish.hk2/hk2-api/${hk2.version}</bundle>
+		<bundle>mvn:org.glassfish.hk2/hk2-locator/${hk2.version}</bundle>
+		<bundle>mvn:org.glassfish.jersey.core/jersey-client/${jersey.version}</bundle>
+		<bundle>mvn:org.glassfish.jersey.core/jersey-common/${jersey.version}</bundle>
+		<bundle>mvn:org.glassfish.jersey.core/jersey-server/${jersey.version}</bundle>
+		<bundle>mvn:org.glassfish.jersey.media/jersey-media-sse/${jersey.version}</bundle>
+		<bundle>mvn:org.glassfish.jersey.media/jersey-media-multipart/${jersey.version}</bundle>
+		<bundle>mvn:org.glassfish.jersey.containers/jersey-container-servlet/${jersey.version}</bundle>
+		<bundle>mvn:org.glassfish.jersey.containers/jersey-container-servlet-core/${jersey.version}</bundle>
+		<bundle>mvn:org.jvnet.mimepull/mimepull/${mimepull.version}</bundle>
+		<bundle>mvn:com.google.guava/guava/${guava.version}</bundle>
+		<bundle>mvn:com.google.code.gson/gson/${gson.version}</bundle>
+		<bundle>mvn:com.eclipsesource.jaxrs/publisher/${jaxrs-publisher.version}</bundle>
+        <bundle>mvn:com.eclipsesource.jaxrs/provider-gson/${jaxrs-provider-gson.version}</bundle>
+        <bundle>mvn:com.eclipsesource.jaxrs/provider-security/${jaxrs-provider-security.version}</bundle>
+        <bundle>mvn:com.eclipsesource.jaxrs/provider-sse/${jaxrs-provider-sse.version}</bundle>
+        <bundle>mvn:com.google.code.gson/gson/2.3</bundle>
+	</feature>
+	
+	<feature name="carpc-jpa" version="${project.version}">
+		<feature>jndi</feature>
+		<feature>jpa</feature>
+		<feature>jdbc</feature>
+		<feature>transaction</feature>
+		<bundle>mvn:org.apache.geronimo.specs/geronimo-jpa_2.0_spec/${geronimo-jpa20-spec.version}</bundle>
+		<bundle>mvn:com.h2database/h2/${h2.version}</bundle>
+		<bundle>mvn:commons-collections/commons-collections/${commons-collections.version}</bundle>
+		<bundle>mvn:commons-pool/commons-pool/${commons-pool.version}</bundle>
+		<bundle>mvn:commons-dbcp/commons-dbcp/${commons-dbcp.version}</bundle>
+		<bundle>mvn:commons-lang/commons-lang/${commons-lang.version}</bundle>
+		<bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.serp/${serp.version}</bundle>
+		<bundle>mvn:org.apache.openjpa/openjpa/${openjpa.version}</bundle>
+        <bundle>mvn:de.visiom.carpc.asb/h2-database/${project.version}</bundle>
+	</feature>
+	
+	<feature name="asb" version="${project.version}">
+		<feature>eventadmin</feature>
+		<feature>carpc-jpa</feature>
+		<feature>osgi-jaxrs</feature>
+		<bundle>mvn:commons-io/commons-io/${commons-io.version}</bundle>
+        <bundle>mvn:de.visiom.carpc.asb/service-model/${project.version}</bundle>
+		<bundle>mvn:de.visiom.carpc.asb/message-bus-api/${project.version}</bundle>
+		<bundle>mvn:de.visiom.carpc.asb/message-bus-impl/${project.version}</bundle>
+		<bundle>mvn:de.visiom.carpc.asb/service-registry-api/${project.version}</bundle>
+		<bundle>mvn:de.visiom.carpc.asb/service-registry-impl/${project.version}</bundle>
+		<bundle>mvn:de.visiom.carpc.asb/parameter-value-registry-api/${project.version}</bundle>
+		<bundle>mvn:de.visiom.carpc.asb/parameter-value-registry-impl/${project.version}</bundle>
+		<bundle>mvn:de.visiom.carpc.asb/user-store-api/${project.version}</bundle>
+        <bundle>mvn:de.visiom.carpc.asb/user-store-datasource/${project.version}</bundle>
+		<bundle>mvn:de.visiom.carpc.asb/user-store-impl/${project.version}</bundle>
+		<bundle>mvn:de.visiom.carpc.asb/rest-api/${project.version}</bundle>
+		<bundle>mvn:de.visiom.carpc.asb/rest-impl/${project.version}</bundle>
+	</feature>
+	
+</features>

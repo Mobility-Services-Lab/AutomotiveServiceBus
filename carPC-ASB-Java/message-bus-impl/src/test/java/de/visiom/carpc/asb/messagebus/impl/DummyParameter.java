@@ -1,0 +1,78 @@
+/*
+ * Copyright 2015 Technische Universität München
+ *
+ * Author:
+ * David Soto Setzke
+ *
+ *
+ * This file is part of the Automotive Service Bus v1.1 which was
+ * forked from the research project Visio.M:
+ *
+ * 	 http://www.visiom-automobile.de/home/
+ *
+ *
+ * This file is licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.  You may obtain a copy of the License at
+ *
+ * 	 http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an "AS IS"
+ * BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and limitations under the License.
+ */
+package de.visiom.carpc.asb.messagebus.impl;
+
+import java.util.List;
+
+import de.visiom.carpc.asb.servicemodel.Service;
+import de.visiom.carpc.asb.servicemodel.exceptions.IncompatibleValueException;
+import de.visiom.carpc.asb.servicemodel.parameters.Parameter;
+import de.visiom.carpc.asb.servicemodel.valueobjects.ValueObject;
+
+public class DummyParameter implements Parameter {
+
+    private final Service dummyService = new DummyService();
+
+    @Override
+    public long getId() {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public boolean isReadOnly() {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public String getName() {
+        return "parameter";
+    }
+
+    @Override
+    public String getDescription() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public List<Class<? extends ValueObject>> getCompatibleValueObjects() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public Service getService() {
+        return dummyService;
+    }
+
+    @Override
+    public ValueObject createValueObject(Object object)
+            throws IncompatibleValueException {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+}

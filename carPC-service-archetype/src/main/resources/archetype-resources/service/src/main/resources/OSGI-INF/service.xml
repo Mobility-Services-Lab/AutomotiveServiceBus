@@ -1,0 +1,9 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service name="${serviceName}" description="">
+	<parameters>
+	   <numericParameter id="0" name="${parameterName}" range="-100..100" />
+	</parameters>
+</service>

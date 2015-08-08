@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service name="can" description="CAN service">
+	<parameters>
+		<switchParameter id="16" name="absdeaktivieren" readOnly="false" />
+		<switchParameter id="17" name="espdeaktivieren" readOnly="false" />
+		<switchParameter id="18" name="tvdeaktivieren" readOnly="false" />
+		<stateParameter id="19" name="fahrmodus" readOnly="false">
+			<states>
+				<state>Default</state>
+				<state>Eco</state>
+				<state>Comfort</state>
+				<state>Sport</state>
+			</states>
+		</stateParameter>
+		<switchParameter id="0" name="defrost" readOnly="true" />
+		<switchParameter id="1" name="umluft" readOnly="false" />
+		<numericParameter id="2" name="energieverbrauch"
+			range="-30..95" readOnly="true" />
+		<numericParameter id="3" name="innentemperatur"
+			range="-30..95" readOnly="true" unitSymbol="°C" />
+		<numericParameter id="4" name="aussentemperatur"
+			range="-30..95" readOnly="true" unitSymbol="°C" />
+		<numericParameter id="5" name="lüfterInnenraum"
+			range="0..100" readOnly="false" />
+		<numericParameter id="6" name="klappenstellung"
+			range="0..100" readOnly="false" />
+		<numericParameter id="7" name="temperaturvorgabe"
+			range="16..32" readOnly="false" unitSymbol="°C" />
+		<stateParameter id="8" name="klimatisierung" readOnly="false">
+			<states>
+				<state>Aus</state>
+				<state>Automatik</state>
+				<state>Eco</state>
+				<state>0-Emission</state>
+				<state>Manuell</state>
+			</states>
+		</stateParameter>
+		<numericParameter id="9" name="sitzklimafahrer"
+			range="0..7" readOnly="false" />
+        <numericParameter id="10" name="sitzklimabeifahrer"
+            range="0..7" readOnly="false" />
+		<numericParameter id="11" name="geschwindigkeit"
+			range="-128..128" readOnly="true" />
+		<numericParameter id="12" name="longAcceleration"
+			range="-1.7..2.5" readOnly="true" />
+		<stateParameter id="13" name="blinker" readOnly="true">
+			<states>
+				<state>Kein Blinken</state>
+				<state>Blinker Links</state>
+				<state>Blinker Rechts</state>
+				<state>Warnblinker</state>
+			</states>
+		</stateParameter>
+		<numericParameter id="14" name="ladezustand" range="0..100"
+			readOnly="true" />
+		<stateParameter id="15" name="licht" readOnly="true">
+			<states>
+				<state>Kein Licht</state>
+				<state>Standlicht</state>
+				<state>Tagfahrlicht</state>
+				<state>Abblendlicht</state>
+				<state>Fernlicht</state>
+			</states>
+		</stateParameter>
+		<stateParameter id="20" name="gang" readOnly="true">
+			<states>
+				<state>Neutral</state>
+				<state>Drive</state>
+				<state>Reverse</state>
+				<state>Park</state>
+			</states>
+		</stateParameter>
+		<stateParameter id="21" name="airbag" readOnly="true">
+			<states>
+				<state>Kein Fehler</state>
+				<state>Initialisierung</state>
+				<state>Nicht verfügbar</state>q
+			</states>
+		</stateParameter>
+		<switchParameter id="22" name="fahrertür" readOnly="true" />
+		<switchParameter id="23" name="beifahrertür" readOnly="true" />
+		<switchParameter id="24" name="sitzgurt" readOnly="true" />
+		<numericParameter id="25" name="gesamtkilometerstand"
+			readOnly="true" range="0..65535" />
+		<numericParameter id="26" name="tageskilometerstand"
+			readOnly="true" range="0..6553.5" />
+		<switchParameter id="27" name="heckklappe" readOnly="true" />
+		<switchParameter id="28" name="fronthaube" readOnly="true" />
+		<switchParameter id="29" name="volumeUpPressed"
+			readOnly="true" />
+		<switchParameter id="30" name="volumeDownPressed"
+			readOnly="true" />
+		<switchParameter id="31" name="volumePressed"
+			readOnly="true" />
+		<switchParameter id="32" name="shutdown" readOnly="true" />
+		<switchParameter id="33" name="nebelschlussleuchte"
+			readOnly="true" />
+		<stateParameter id="34" name="fahrbereit" readOnly="true">
+			<states>
+				<state>Fahrbereit</state>
+				<state>Nicht Fahrbereit</state>
+			</states>
+		</stateParameter>
+		<switchParameter id="35" name="parkbremse" readOnly="true" />
+        <switchParameter id="36" name="abs" readOnly="true" />
+        <switchParameter id="37" name="esp" readOnly="true" />
+        <switchParameter id="38" name="ladekabel" readOnly="true" />
+        <switchParameter id="39" name="speedlimiter" readOnly="true" />
+        <numericParameter id="40" name="geschwindigkeitSpeedlimiter" readOnly="true" range="0..127.0" />
+	</parameters>
+</service>

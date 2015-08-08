@@ -1,0 +1,30 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint default-activation="eager"
+	xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+
+    <reference id="serviceRegistry"
+        interface="de.visiom.carpc.asb.serviceregistry.ServiceRegistry" />
+
+    <reference id="eventAdmin" interface="org.osgi.service.event.EventAdmin" />
+
+    <reference id="eventPublisher" interface="de.visiom.carpc.asb.messagebus.EventPublisher" />
+
+	<bean id="helloWorld" class="${package}.ParameterUpdatePublisher" init-method="start">
+	   <property name="eventPublisher" ref="eventPublisher" />
+	   <property name="serviceRegistry" ref="serviceRegistry" />
+	</bean>
+
+    <bean id="testUpdateHandler" class="${package}.ParameterUpdateHandler" />
+
+    <service id="updateHandler" interface="org.osgi.service.event.EventHandler"
+        ref="testUpdateHandler">
+        <service-properties>
+            <entry key="event.topics" value="visiom/updates/${serviceName}" />
+            <entry key="event.filter" value="(parameterName=${parameterName})" />
+        </service-properties>
+    </service>
+    
+</blueprint>

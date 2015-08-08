@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint default-activation="eager"
+	xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+
+	<reference id="parameterValueRegistry"
+		interface="de.visiom.carpc.asb.parametervalueregistry.ParameterValueRegistry" />
+
+	<reference id="preferencesService"
+		interface="de.visiom.carpc.asb.userstore.PreferencesService" />
+
+	<reference id="userService" interface="de.visiom.carpc.asb.userstore.UserService" />
+
+	<reference id="commandPublisher"
+		interface="de.visiom.carpc.asb.messagebus.CommandPublisher" />
+
+	<bean id="valueUpdateHandler"
+		class="de.visiom.carpc.asb.rest.impl.handlers.ValueUpdateHandler" />
+
+	<bean id="commandResponseHandler"
+		class="de.visiom.carpc.asb.rest.impl.handlers.CommandResponseHandler" />
+
+	<bean id="serviceEndpointImpl" class="de.visiom.carpc.asb.rest.impl.ServiceEndpointImpl">
+		<property name="parameterValueRegistry" ref="parameterValueRegistry" />
+		<property name="valueUpdateHandler" ref="valueUpdateHandler" />
+		<property name="commandPublisher" ref="commandPublisher" />
+		<property name="commandResponseHandler" ref="commandResponseHandler" />
+		<property name="preferencesService" ref="preferencesService" />
+		<property name="userService" ref="userService" />
+		<property name="restServiceRegistry" ref="restServiceRegistryImpl" />
+	</bean>
+
+	<service id="serviceEndpoint" interface="de.visiom.carpc.asb.rest.ServiceEndpoint"
+		ref="serviceEndpointImpl" />
+
+	<bean id="authenticationHandlerImpl"
+		class="de.visiom.carpc.asb.rest.impl.security.AuthenticationHandlerImpl">
+		<property name="userService" ref="userService" />
+	</bean>
+
+	<bean id="corsFilterImpl" class="de.visiom.carpc.asb.rest.impl.filters.CORSFilter" />
+
+	<service id="corsFilter" interface="javax.ws.rs.container.ContainerResponseFilter"
+		ref="corsFilterImpl" />
+
+	<service id="authenticationHandler"
+		interface="com.eclipsesource.jaxrs.provider.security.AuthenticationHandler"
+		ref="authenticationHandlerImpl" />
+
+	<bean id="authorizationHandlerImpl"
+		class="de.visiom.carpc.asb.rest.impl.security.AuthorizationHandlerImpl" />
+
+	<bean id="restServiceRegistryImpl" class="de.visiom.carpc.asb.rest.impl.RestServiceRegistryImpl" />
+
+	<service id="restServiceRegistry" interface="de.visiom.carpc.asb.rest.RestServiceRegistry"
+		ref="restServiceRegistryImpl" />
+
+	<service id="serviceRegistryListener"
+		interface="de.visiom.carpc.asb.serviceregistry.ServiceRegistryListener"
+		ref="restServiceRegistryImpl" />
+
+	<service id="authorizationHandler"
+		interface="com.eclipsesource.jaxrs.provider.security.AuthorizationHandler"
+		ref="authorizationHandlerImpl" />
+
+	<service id="commandResponseHandlerService" interface="org.osgi.service.event.EventHandler"
+		ref="commandResponseHandler">
+		<service-properties>
+			<entry key="event.topics" value="visiom/commands/responses" />
+		</service-properties>
+	</service>
+
+	<service id="restValueUpdateHandler" interface="org.osgi.service.event.EventHandler"
+		ref="valueUpdateHandler">
+		<service-properties>
+			<entry key="event.topics" value="visiom/updates/*" />
+		</service-properties>
+	</service>
+
+</blueprint>

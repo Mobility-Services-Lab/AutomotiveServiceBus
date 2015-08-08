@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint default-activation="eager"
+	xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+
+	<reference id="eventAdmin" interface="org.osgi.service.event.EventAdmin" />
+
+	<bean id="eventPublisherImpl" class="de.visiom.carpc.asb.messagebus.impl.EventPublisherImpl">
+		<property name="eventAdmin" ref="eventAdmin" />
+	</bean>
+
+	<service id="eventPublisher" interface="de.visiom.carpc.asb.messagebus.EventPublisher"
+		ref="eventPublisherImpl" />
+		
+	<bean id="commandPublisherImpl" class="de.visiom.carpc.asb.messagebus.impl.CommandPublisherImpl">
+		<property name="eventAdmin" ref="eventAdmin" />
+	</bean>
+
+	<service id="commandPublisher" interface="de.visiom.carpc.asb.messagebus.CommandPublisher"
+		ref="commandPublisherImpl" />
+
+</blueprint>

@@ -1,0 +1,100 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>de.visiom.carpc</groupId>
+		<artifactId>carpc-parent</artifactId>
+		<version>1.1.0</version>
+	</parent>
+
+	<groupId>de.visiom.carpc.asb</groupId>
+	<artifactId>asb-parent</artifactId>
+	<packaging>pom</packaging>
+
+	<name>CarPC :: Automotive Service Bus :: Aggregator</name>
+
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+
+	<modules>
+		<module>features</module>
+		<module>service-model</module>
+		<module>message-bus-api</module>
+		<module>message-bus-impl</module>
+		<module>parameter-value-registry-api</module>
+		<module>parameter-value-registry-impl</module>
+		<module>h2-database</module>
+		<module>user-store-api</module>
+		<module>user-store-impl</module>
+		<module>user-store-datasource</module>
+		<module>rest-api</module>
+		<module>rest-impl</module>
+		<module>service-registry-api</module>
+		<module>service-registry-impl</module>
+		<module>service-registry-impl-itests</module>
+		<module>asb-api</module>
+	</modules>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.core</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.enterprise</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.compendium</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+			  <groupId>org.jasig.maven</groupId>
+			  <artifactId>maven-notice-plugin</artifactId>
+			  <version>1.0.4</version>
+			  <configuration>
+			    <noticeTemplate>NOTICE.template</noticeTemplate>
+			    <licenseMapping>
+			      <param>https://source.jasig.org/licenses/license-mappings.xml</param>
+			      <param>license-mappings.xml</param>
+			    </licenseMapping>
+			  </configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.4.2</version>
+				<configuration>
+					<goals>deploy</goals>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

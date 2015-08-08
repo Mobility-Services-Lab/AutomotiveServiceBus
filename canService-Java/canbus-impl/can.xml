@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service name="CAN" description="CAN service">
+	<parameters>
+		<numericParameter name="geschwindigkeit" range="-128..128" stepSize="0.0625" />
+		<numericParameter name="gesamtkilometerstand" range="0..65535" stepSize="1" />
+		<numericParameter name="tageskilometerstand" range="0..6553.5" stepSize="0.1" />
+		<stateParameter name="gang">
+			<states>
+				<state>Neutral</state>
+				<state>Drive</state>
+				<state>Reverse</state>
+				<state>Park</state>
+				<state>Error</state>
+				<state>TBD</state>
+			</states>
+		</stateParameter>
+		<stateParameter name="blinker">
+			<states>
+				<state>Kein Blinken</state>
+				<state>Blinker Links</state>
+				<state>Blinker Rechts</state>
+				<state>Warnblinker</state>
+			</states>
+		</stateParameter>
+		<stateParameter name="licht">
+			<states>
+				<state>Kein Licht</state>
+				<state>Standlicht</state>
+				<state>Tagfahrlicht</state>
+				<state>Abblendlicht</state>
+				<state>Fernlicht</state>
+			</states>
+		</stateParameter>
+		<switchParameter name="sitzgurt" />
+		<stateParameter name="fahrertuer" >
+			<states>
+				<state>Geöffnet</state>
+				<state>Geschlossen</state>
+			</states>
+		</stateParameter>
+		<stateParameter name="beifahrertuer">
+			<states>
+				<state>Geöffnet</state>
+				<state>Geschlossen</state>
+			</states>
+		</stateParameter>
+		<stateParameter name="fronthaube">
+			<states>
+				<state>Geöffnet</state>
+				<state>Geschlossen</state>
+			</states>
+		</stateParameter>
+		<stateParameter name="heckklappe">
+			<states>
+				<state>Geöffnet</state>
+				<state>Geschlossen</state>
+			</states>
+		</stateParameter>
+		<switchParameter name="fahrbereit" />
+		<switchParameter name="ladekabel" />
+		<switchParameter name="abs" />
+		<switchParameter name="esp" />
+		<switchParameter name="sicherheitssysteme" />
+		<stateParameter name="airbag">
+			<states>
+				<state>Kein Fehler</state>
+				<state>Initialisierung</state>
+				<state>Nicht verfügbar</state>
+			</states>
+		</stateParameter>
+		<stateParameter name="kollisionsassistent" >
+			<states>
+				<state>Keine Warnung</state>
+				<state>Front 1</state>
+				<state>Front 2</state>
+				<state>Seite 1</state>
+				<state>Seite 2</state>
+			</states>
+		</stateParameter>
+		<switchParameter name="speedlimiter" />
+		<switchParameter name="defrost" />
+		<numericParameter name="ladezustand" range="0..100" stepSize="0.5" />
+		<numericParameter name="energieverbrauch" range="-100..100" stepSize="1" />
+		<numericParameter name="brennerfüllstand" range="0..100" stepSize="0.5" />
+		<numericParameter name="geschwindigkeitSpeedlimiter" range="0..127" stepSize="0.5" />
+		<numericParameter name="innentemperatur" range="-30..95" stepSize="0.5" />
+		<numericParameter name="aussentemperatur" range="-30..95" stepSize="0.5" />
+		<numericParameter name="luefterInnenraum" range="0..100" stepSize="0.5" />
+		<numericParameter name="klappenstellung" range="0..100" stepSize="0.5" />
+		<numericParameter name="temperaturvorgabe" range="-30..95" stepSize="0.5" />
+		<stateParameter name="klimatisierung" >
+			<states>
+				<state>Aus</state>
+				<state>Automatic</state>
+				<state>Eco</state>
+				<state>0-Emission</state>
+				<state>Manuell</state>
+			</states>
+		</stateParameter>
+		<numericParameter name="sitzklimatisierung" range="0..7" stepSize="1.0" />
+		<switchParameter name="umluft" />
+		<switchParameter name="tv" />
+		<stateParameter name="fahrmodus">
+			<states>
+				<state>Default</state>
+				<state>Eco</state>
+				<state>Comfort</state>
+				<state>Sport</state>
+			</states>
+		</stateParameter>
+		<numericParameter name="lateralAcceleration" range="-3214.5408..3214.4427" stepSize="0.0981" />
+		<numericParameter name="longAcceleration" range="0..1" stepSize="0.0981" />
+		<numericParameter name="yawRate" range="0..1" stepSize="0.00286" />
+		<numericParameter name="leistungTVI" range="-32767..32767" stepSize="1" />
+		<numericParameter name="torqueValue" range="-327.68..327.67" stepSize="0.01" />
+		<numericParameter name="leistungInv" range="-32767..32767" stepSize="1" />
+		<numericParameter name="INVTorqueValue" range="-327.68..327.67" stepSize="0.01" />
+		<numericParameter name="bremsdruckVorneLinks" range="0..655" stepSize="0.01" />
+		<numericParameter name="bremsdruckVorneRechts" range="0..655" stepSize="0.01" />
+		<numericParameter name="bremsdruckHintenLinks" range="0..655" stepSize="0.01" />
+		<numericParameter name="bremsdruckHintenRechts" range="0..655" stepSize="0.01" />
+		<numericParameter name="radgeschwindigkeitVorneLinks" range="0..655" stepSize="0.01" />
+		<numericParameter name="radgeschwindigkeitVorneRechts" range="0..655" stepSize="0.01" />
+		<numericParameter name="radgeschwindigkeitHintenLinks" range="0..655" stepSize="0.01" />
+		<numericParameter name="radgeschwindigkeitHintenRechts" range="0..655" stepSize="0.01" />
+		<numericParameter name="lenkwinkel" range="-1000..1000" stepSize="0.1" />
+		<numericParameter name="lenkwinkelgeschwindigkeit" range="0..1016" stepSize="4" />
+		<numericParameter name="fahrpedalstellung" range="0..100" stepSize="0.4" />
+		<numericParameter name="bremspedalstellung" range="0..100" stepSize="0.4" />
+		<numericParameter name="leistungHV" range="-32767..32767" stepSize="1" />
+		<numericParameter name="hochvoltspannung" range="0..512" stepSize="0.5" />
+		<numericParameter name="stromHV" range="-102.3..102.3" stepsize="0.1" />
+		<stateParameter name="hauptschütz">
+			<states>
+				<state>Offen</state>
+				<state>Geschlossen</state>
+			</states>
+		</stateParameter>
+		<stateParameter name="NV-schütz">
+			<states>
+				<state>Offen</state>
+				<state>Geschlossen</state>
+			</states>
+		</stateParameter>
+		<stateParameter name="ladeschütz">
+			<states>
+				<state>Offen</state>
+				<state>Geschlossen</state>
+			</states>
+		</stateParameter>
+		<numericParameter name="leistungNV" range="0..4096" stepSize="1" />
+		<numericParameter name="niedervoltspannung" range="0..16" stepSize="0.5" />
+		<numericParameter name="stromNV" range="-204.7..204.7" stepSize="0.1" />
+		<switchParameter name="kl30l" description="Status KL30L" />
+		<switchParameter name="kl30b" description="Status KL30B" />
+		<switchParameter name="kl15" description="Status KL15" />
+		<stateParameter name="ucu">
+			<states>
+				<state>Offline</state>
+				<state>Initialisierung</state>
+				<state>HV-aktiv</state>
+				<state>Betrieb</state>
+				<state>Shutdown</state>
+				<state>TBD</state>
+			</states>
+		</stateParameter>
+		<numericParameter name="temperaturHVAkku" range="-30..95" stepSize="0.5" />
+		<numericParameter name="temperaturGetriebe" range="-30..95" stepSize="0.5" />
+		<numericParameter name="temperaturKuehlkreislauf" range="-30..95" stepSize="0.5" />
+		<numericParameter name="temperaturKuehlkreislauf2" range="-30..95" stepSize="0.5" />
+		<numericParameter name="temperaturPeltierelemente" range="-30..95" stepSize="0.5" />
+		<switchParameter name="hupe" />
+	</parameters>
+</service>

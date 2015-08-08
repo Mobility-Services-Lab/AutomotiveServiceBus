@@ -1,0 +1,11 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service path="${serviceName}" name="${serviceName}" ranking="10">
+	<parameters>
+	   <restNumericParameter path="${parameterName}" referenceParameter="0"
+	       name="${parameterName}" />
+	</parameters>
+</service>
+
